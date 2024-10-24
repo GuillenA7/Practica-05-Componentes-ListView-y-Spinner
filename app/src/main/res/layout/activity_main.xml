@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:background="@color/dusty"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textAllCaps="false"
+        android:textColor="@color/purple"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06" />
+
+    <EditText
+        android:id="@+id/edtCodigo"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/codigo"
+        android:inputType="number"
+        android:textColorHint="@color/darker"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/txtGeneros"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+    <TextView
+        android:id="@+id/txtCapacidad"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/capacidad"
+        android:textColor="@color/darker"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edtCodigo"
+        app:layout_constraintTop_toBottomOf="@id/edtConcierto" />
+
+    <Spinner
+        android:id="@+id/spnCapacidad"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edtCodigo"
+        app:layout_constraintTop_toBottomOf="@id/txtCapacidad" />
+
+    <EditText
+        android:id="@+id/edtConcierto"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/concierto"
+        android:inputType="text"
+        android:textColorHint="@color/darker"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edtCodigo"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+    <EditText
+        android:id="@+id/edtFecha"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/fecha"
+        android:inputType="text"
+        android:textColorHint="@color/darker"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/txtCapacidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtCodigo" />
+
+    <TextView
+        android:id="@+id/txtAuditorio"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/auditorio"
+        android:textColor="@color/darker"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/txtGeneros"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtFecha" />
+
+    <ListView
+        android:id="@+id/ltvAuditorio"
+        android:layout_width="170dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtGeneros"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtAuditorio" />
+
+    <TextView
+        android:id="@+id/txtGeneros"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/generos"
+        android:textColor="@color/darker"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txtAuditorio"
+        app:layout_constraintTop_toBottomOf="@id/edtFecha" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/gpoChServicios"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toEndOf="@id/txtAuditorio"
+        app:layout_constraintTop_toBottomOf="@id/txtGeneros">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chGenBa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/genBa"
+            android:textSize="16sp"
+            android:checkable="true"
+            android:checked="false"
+            android:textColor="@color/dusty"
+            app:chipBackgroundColor="@color/purple_dark"
+            app:useMaterialThemeColors="false" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chGenPop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/genPop"
+            android:textSize="16sp"
+            android:checkable="true"
+            android:checked="false"
+            android:textColor="@color/dusty"
+            app:chipBackgroundColor="@color/purple_dark"
+            app:useMaterialThemeColors="false" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chGenRo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/genRo"
+            android:textSize="16sp"
+            android:checkable="true"
+            android:checked="false"
+            android:textColor="@color/dusty"
+            app:chipBackgroundColor="@color/purple_dark"
+            app:useMaterialThemeColors="false" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <ImageButton
+        android:id="@+id/ibtnAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/purple_dark"
+        android:onClick="onClick"
+        android:text="@string/agregar"
+        app:layout_constraintEnd_toStartOf="@+id/ibtnBuscar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ltvAuditorio"
+        app:srcCompat="@drawable/baseline_add_24"
+        app:tint="@color/dusty" />
+
+    <ImageButton
+        android:id="@+id/ibtnBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/purple_dark"
+        android:onClick="onClick"
+        android:text="@string/buscar"
+        app:layout_constraintEnd_toStartOf="@+id/ibtnLimpiar"
+        app:layout_constraintStart_toEndOf="@+id/ibtnAgregar"
+        app:layout_constraintTop_toBottomOf="@id/ltvAuditorio"
+        app:srcCompat="@drawable/baseline_search_24"
+        app:tint="@color/dusty" />
+
+    <ImageButton
+        android:id="@+id/ibtnLimpiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/purple_dark"
+        android:onClick="onClick"
+        android:text="@string/limpiar"
+        app:layout_constraintEnd_toStartOf="@+id/ibtnEliminar"
+        app:layout_constraintStart_toEndOf="@+id/ibtnBuscar"
+        app:layout_constraintTop_toBottomOf="@id/ltvAuditorio"
+        app:srcCompat="@drawable/baseline_restore_24"
+        app:tint="@color/dusty" />
+
+    <ImageButton
+        android:id="@+id/ibtnEliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/purple_dark"
+        android:onClick="onClick"
+        android:text="@string/eliminar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibtnLimpiar"
+        app:layout_constraintTop_toBottomOf="@id/ltvAuditorio"
+        app:srcCompat="@drawable/baseline_delete_24"
+        app:tint="@color/dusty" />
+</androidx.constraintlayout.widget.ConstraintLayout>
